@@ -1,0 +1,50 @@
+<?php
+
+// Add your custom theme override functions here.
+
+/**
+ * Implements hook_preprocess_block()
+ */
+function filmcloud_preprocess_block(&$variables) {
+}
+
+/**
+ * Implements template_preprocess_field().
+ */
+function filmcloud_preprocess_field(&$variables) {
+}
+
+/**
+ * Implements template_preprocess_html().
+ *
+ * Adds additional classes
+ */
+function filmcloud_preprocess_html(&$variables) {
+}
+
+/**
+ * Implements template_preprocess_node
+ *
+ * Add template suggestions and classes
+ */
+function filmcloud_preprocess_node(&$variables) {
+}
+
+/**
+ * Implements template_preprocess_page
+ *
+ * Add convenience variables and template suggestions
+ */
+function filmcloud_preprocess_page(&$variables) {
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function filmcloud_preprocess_views_view(&$variables) {}
+
+/* Sökrutan */
+
+function filmcloud_form_search_block_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    $form['keys']['#attributes']['placeholder'] = t('Sök på Filmcloud');
+}

@@ -1,0 +1,11 @@
+global:
+  version: VERSION
+  css:
+    base:
+      css/filmcloud.css: {}
+  js:
+    js/filmcloud.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/modernizr
