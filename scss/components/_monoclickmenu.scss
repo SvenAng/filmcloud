@@ -320,15 +320,16 @@ $hamburger-height: 45px;
 
 .mobil_nav #main-navigation-content ul {
     list-style: outside none none;
-    //    margin: 15px 0 0;
+        margin: 0;
 
     //    padding-top: 20px;
 }
 
 .mobil_nav #main-navigation-content ul li {
     text-align: center;
-    margin-bottom: 0.3rem;
-    margin-top: 0.3rem;
+//    margin-bottom: 0.3rem;
+//    margin-top: 0.3rem;
+    border-bottom: 1px $base solid;
 }
 
 //.mobil_nav #main-navigation-content ul > li {
@@ -348,7 +349,7 @@ $hamburger-height: 45px;
     text-transform: uppercase;
     transition: color 0.2s ease-in-out 0s;
     font-size: 1.1rem;
-    //  line-height: 1.2rem;
+      line-height: 3.2rem;
 
 }
 
