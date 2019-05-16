@@ -55,7 +55,9 @@
         */
         #}
 
-        
+      
+    
+    
         <header class="header" role="banner" aria-label="{{ 'Site header'|t }}">
             
             <div class="header-wrapper-inner">
@@ -172,7 +174,23 @@
                 {% endif %}
 
                 <div class="row">
-                    <main id="main" class="{{ main_grid }} columns" role="main">
+                    {% if page.sidebar_first|render|striptags('<drupal-render-placeholder>')|trim|length > 0 %}
+                    1
+                    
+                    {% set monoclick_sidebar_first_grid = 'large-3 large-pull-9' %}
+                    {% set monoclick_main_grid = 'large-9 large-push-3' %}
+                    
+                   
+                    
+                    {% else %}
+                    3
+                    {% set monoclick_main_grid = 'large-12' %}
+                    
+                    {% endif %}
+                   
+                    
+                    
+                    <main id="main" class="{{ monoclick_main_grid }} columns" role="main">
                         {% if page.highlighted %}
                         {% spaceless %}
                         {{ page.highlighted }}
@@ -180,21 +198,24 @@
                         {% endif %}
                         <a id="main-content"></a>
                         {% if breadcrumb %} {{ breadcrumb }} {% endif %}
+                        
+                      
+                        
                         <section>
+                            
                             {{ page.content }}
                         </section>
                     </main>
-
-                    {% if page.sidebar_first %}
-                    <div id="sidebar-first" class="{{ sidebar_first_grid }} columns sidebar ">
-                        {{ page.sidebar_first }}
-                    </div>
+                    
+                    
+                    {% if page.sidebar_first|render|striptags('<drupal-render-placeholder>')|trim|length > 0 %}
+                    
+                    <div id="sidebar-first" class="{{ monoclick_sidebar_first_grid }}  columns sidebar ">
+                            {{ page.sidebar_first }}
+                        </div>
                     {% endif %}
-                    {% if page.sidebar_second %}
-                    <div id="sidebar-second" class="{{ sidebar_sec_grid }} columns sidebar">
-                        {{ page.sidebar_second }}
-                    </div>
-                    {% endif %}
+                    
+                   
                 </div>
 
                 <div class="footer-wrapper">

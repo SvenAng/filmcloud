@@ -286,7 +286,36 @@ header {
     }
 
 }
+//Content ======================================
+.standardvy{
+//    3 kolumner
+    display: flex;
+    flex-wrap: wrap;
+    .vyrad{
+//        flex: 1;
+        width: 33%;
+        padding: 0 1% 2% 1%;
+    }
+    @media #{$small-only} {
+        .vyrad{
+            
+            width: 100%;
+        }
+    }
+    
+    a{
+        color:  $body-font-color;
+    }
+}
+.views-pager{
+    width: 100%;
+    ul{
+        text-align: center; 
+    }
+    
+}
 
+//==========================================
 // Footer
 footer.row {
 }
