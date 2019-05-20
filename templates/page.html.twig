@@ -175,21 +175,14 @@
 
                 <div class="row">
                     {% if page.sidebar_first|render|striptags('<drupal-render-placeholder>')|trim|length > 0 %}
-                    1
-                    
-                    {% set monoclick_sidebar_first_grid = 'large-3 large-pull-9' %}
-                    {% set monoclick_main_grid = 'large-9 large-push-3' %}
-                    
-                   
-                    
+<!--                    1-->
+                        {% set monoclick_sidebar_first_grid = 'large-3 large-pull-9' %}
+                        {% set monoclick_main_grid = 'large-9 large-push-3' %}
                     {% else %}
-                    3
-                    {% set monoclick_main_grid = 'large-12' %}
-                    
+<!--                    3-->
+                        {% set monoclick_main_grid = 'large-12' %}
                     {% endif %}
                    
-                    
-                    
                     <main id="main" class="{{ monoclick_main_grid }} columns" role="main">
                         {% if page.highlighted %}
                         {% spaceless %}
@@ -199,10 +192,11 @@
                         <a id="main-content"></a>
                         {% if breadcrumb %} {{ breadcrumb }} {% endif %}
                         
-                      
-                        
                         <section>
-                            
+                            {% if node.type.entity.label == null %}
+                                {{ page.content_title }}
+                            {%endif %}
+                        
                             {{ page.content }}
                         </section>
                     </main>
@@ -220,24 +214,39 @@
 
                 <div class="footer-wrapper">
                     {% if page.footer_first or page.footer_middle or page.footer_last %}
-                    <footer class="row">
-                        {% if page.footer_first %}
-                        <div id="footer-first" class="large-4 columns">
-                            {{ page.footer_first }}
+                    <footer>
+                        <div class="row footer-row-1">
+                            
+                            <div id="footer-left" class="large-8 columns">
+                                {{ page.footer_top_left }}
+                            </div>
+                            
+                            
+                            <div id="footer-right" class="large-4 columns">
+                                {{ page.footer_top_right }}
+                            </div>
+                            
                         </div>
-                        {% endif %}
-                        {% if page.footer_middle %}
-                        <div id="footer-middle" class="large-4 columns">
-                            {{ page.footer_middle }}
+                        <div class="row footer-row-2">
+                            {% if page.footer_first %}
+                            <div id="footer-first" class="large-4 columns">
+                                {{ page.footer_first }}
+                            </div>
+                            {% endif %}
+                            {% if page.footer_middle %}
+                            <div id="footer-middle" class="large-4 columns">
+                                {{ page.footer_middle }}
+                            </div>
+                            {% endif %}
+                            {% if page.footer_last %}
+                            <div id="footer-last" class="large-4 columns">
+                                {{ page.footer_last }}
+                            </div>
+                            {% endif %}
                         </div>
-                        {% endif %}
-                        {% if page.footer_last %}
-                        <div id="footer-last" class="large-4 columns">
-                            {{ page.footer_last }}
-                        </div>
-                        {% endif %}
                     </footer>
                     {% endif %}
+<!--
                     <div class="footer-bottom">
                         <div class="row">
                             <div class="large-12 columns">
@@ -245,6 +254,7 @@
                             </div>
                         </div>
                     </div>
+-->
                 </div>
 
 

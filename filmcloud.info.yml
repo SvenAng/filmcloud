@@ -26,9 +26,12 @@ regions:
   page_top: 'Page top'
   page_bottom: 'Page bottom'
   highlighted: Highlighted
+  content_title: Content title
   content: Content
   sidebar_first: 'Left Sidebar'
   sidebar_second: 'Right Sidebar'
+  footer_top_left: 'Footer Top Left'
+  footer_top_right: 'Footer Top right'
   footer_first: 'Footer first column'
   footer_middle: 'Footer middle column'
   footer_last: 'Footer last column'

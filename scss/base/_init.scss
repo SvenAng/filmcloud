@@ -287,6 +287,30 @@ header {
 
 }
 //Content ======================================
+pre{
+    overflow: inherit;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    margin-bottom: $column-gutter/2;
+    padding: $column-gutter/2;
+    background: $silver;
+}
+.body{
+    img{
+        padding-right: $column-gutter/3;
+    }
+}
+.group-header{
+    margin-bottom: $column-gutter/2;
+}
+.group-middle{
+    .date{
+        font-size: 0.85rem;
+        color: $charcoal;
+    }
+}
+
+
 .standardvy{
 //    3 kolumner
     display: flex;
@@ -295,6 +319,16 @@ header {
 //        flex: 1;
         width: 33%;
         padding: 0 1% 2% 1%;
+        h3{
+//            margin: 0.5rem 0 0.2rem 0;
+        }
+        .image{
+            margin: 0 0 0.6rem 0;
+        }
+        .date{
+            font-size: 0.85rem;
+            color: $charcoal;
+        }
     }
     @media #{$small-only} {
         .vyrad{
@@ -307,6 +341,31 @@ header {
         color:  $body-font-color;
     }
 }
+.kalender{
+   
+    time, i{
+        font-size: 0.85rem;
+        color: $charcoal;
+    }
+    .kalender-item{
+        border-bottom: 1px dashed $base;
+        padding: $column-gutter 0;
+    }
+    .kalender-item:last-child{
+        border: none;
+        //funkar ej
+    }
+    h2{
+        font-size: 1.25rem;
+    }
+    h3{
+        border-bottom: 3px solid $charcoal;
+        padding: $column-gutter 0 0 0;
+    }
+    
+}
+
+
 .views-pager{
     width: 100%;
     ul{
@@ -315,22 +374,79 @@ header {
     
 }
 
+.node{
+    .field-label-inline{
+        font-weight: 700;
+    }
+    .meta-sida{
+        background: $silver;
+        padding: $column-gutter;
+    }
+}
+
 //==========================================
 // Footer
 footer.row {
 }
 
 .footer-wrapper {
-    background: $silver;
-    //    position: relative;
-    //    bottom: 0;
+    
     height: 100%;
     min-height: 100%;
     display: flex;
     flex-direction: column;
-
+    margin-top: $column-gutter;
+    padding-top: $column-gutter;
+    
+    
     footer {
-
+        $footerfontstorlek: 0.9rem;
+        color: $white;
+        p{
+            font-size: $footerfontstorlek; 
+        }
+        font-size: $footerfontstorlek;
+        h1,h2,h3,h4,h5,h6{
+            color: $white;
+        }
+        background: $black;
+        .footer-row-1{
+            margin-top: $column-gutter*3;
+            border-bottom: 1px $white solid;   
+        }
+        .footer-row-2{
+            margin-top: $column-gutter;
+        }
+        
+        #footer-right{
+            img{
+                width: 55px;
+                height: auto;
+                display: inline-block;
+            }
+            text-align: right;
+        }
+        nav{
+            ul{
+                margin: 0;
+                padding: 0;
+            
+                li{
+                    list-style: none;
+                    border-bottom: 1px dotted $silver;
+                    padding: $column-gutter/4 0;
+                    margin: 0;
+                    a{
+                        padding: $column-gutter/4 0;
+                        font-size: $footerfontstorlek;
+                    }
+                }
+                li:last-child{
+                    border: none;
+                }
+            }
+        }
+        
     }
 
     .footer-bottom {
