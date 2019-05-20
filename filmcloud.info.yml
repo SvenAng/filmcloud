@@ -30,6 +30,9 @@ regions:
   content: Content
   sidebar_first: 'Left Sidebar'
   sidebar_second: 'Right Sidebar'
+  tertier_first: 'Botten Första'
+  tertier_second: 'Botten Andra'
+  tertier_third: 'Botten Tredje'
   footer_top_left: 'Footer Top Left'
   footer_top_right: 'Footer Top right'
   footer_first: 'Footer first column'

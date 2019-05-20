@@ -85,7 +85,9 @@ header.open{
     height: 100%;
 }
 header {
+    
     .header-wrapper-inner {
+        border-bottom: 1px solid $gainsboro;
         background: white;
         display: flex;
         flex-direction: row;
@@ -261,7 +263,7 @@ header {
 .top-image {
     position: relative;
     overflow: auto;
-
+    margin-bottom:  $column-gutter;
     .alt {
         color: $white;
         width: 50%;
@@ -316,9 +318,7 @@ pre{
     display: flex;
     flex-wrap: wrap;
     .vyrad{
-//        flex: 1;
-        width: 33%;
-        padding: 0 1% 2% 1%;
+        padding: 0 $column-gutter/1.5 $column-gutter 0%;
         h3{
 //            margin: 0.5rem 0 0.2rem 0;
         }
@@ -329,6 +329,12 @@ pre{
             font-size: 0.85rem;
             color: $charcoal;
         }
+    }
+    .vyrad-33{
+        width: 33%;
+    }
+    .vyrad-50{
+        width: 49%;
     }
     @media #{$small-only} {
         .vyrad{
@@ -346,6 +352,9 @@ pre{
     time, i{
         font-size: 0.85rem;
         color: $charcoal;
+    }
+    i{
+        padding-right: $column-gutter/4
     }
     .kalender-item{
         border-bottom: 1px dashed $base;
@@ -373,6 +382,80 @@ pre{
     }
     
 }
+.block-title{
+//    font-size: 1.1rem;
+}
+.standardvy-block{
+    
+    .item{
+        time, i, .date{
+            font-size: 0.85rem;
+            color: $charcoal;
+        }
+        i{
+            padding-right: $column-gutter/4
+        }
+        h2,h3,h4,h5,h6{
+            font-family: $font-family-sans-serif;
+            font-weight: 700;
+        }
+        h3{
+
+        }
+        h4,h5{
+            font-size: 0.9rem;
+        }
+        a{
+            color: $body-font-color;
+//            font-size: 0.9rem;
+//            font-weight: 700;
+        }
+    }
+    .block-title{
+        border-bottom: 1px dotted $oil;
+        font-family: $font-family-serif;
+        padding-bottom: 0.2rem;
+        display: flex;
+        justify-content: space-between;
+            span.first{
+                i{
+//                    color: $nav-button-green;
+                    padding-right: 0.7rem;
+                    font-size: 0.9rem;
+                }
+            }
+            span.second{
+                i{
+                    color: $oil;
+                    padding-left: 0.1rem
+                }
+                a{
+                    color: $body-font-color;
+                }
+            }
+        a{
+            font-size: 0.75rem;
+        }
+        
+    }
+} 
+.standardvy-block-1{
+    .item{
+        margin-bottom: $column-gutter;    
+    }
+    .block-title span.first i{
+        color: $nav-button-green;
+    }
+}
+.standardvy-block-2{
+    .item{
+        margin-bottom: $column-gutter/3;    
+    }
+    .block-title span.first i{
+        color: $nav-button-orange;
+    }
+}
+
 
 .node{
     .field-label-inline{
@@ -383,7 +466,10 @@ pre{
         padding: $column-gutter;
     }
 }
-
+.tertier-wrapper{
+    background:  $silver;  
+    padding: $column-gutter 0;
+} 
 //==========================================
 // Footer
 footer.row {
@@ -395,8 +481,8 @@ footer.row {
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: $column-gutter;
-    padding-top: $column-gutter;
+//    margin-top: $column-gutter;
+//    padding-top: $column-gutter;
     
     
     footer {

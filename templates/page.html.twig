@@ -182,6 +182,14 @@
 <!--                    3-->
                         {% set monoclick_main_grid = 'large-12' %}
                     {% endif %}
+                    
+                    {% if page.sidebar_second|render|striptags('<drupal-render-placeholder>')|trim|length > 0 %}
+                        {% set monoclick_sidebar_second_grid = 'large-3' %}
+                        {% set monoclick_main_grid = 'large-9' %}
+                    {% else %}
+                    
+                        {% set monoclick_main_grid = 'large-12' %}
+                    {% endif %}
                    
                     <main id="main" class="{{ monoclick_main_grid }} columns" role="main">
                         {% if page.highlighted %}
@@ -208,10 +216,30 @@
                             {{ page.sidebar_first }}
                         </div>
                     {% endif %}
+                    {% if page.sidebar_second|render|striptags('<drupal-render-placeholder>')|trim|length > 0 %}
+
+                    <div id="sidebar-second" class="{{ monoclick_sidebar_second_grid }}  columns sidebar ">
+                        {{ page.sidebar_second }}
+                    </div>
+                    {% endif %}
                     
                    
                 </div>
-
+                    {% if page.tertier_first %}    
+                <div class="tertier-wrapper">
+                    <div class="row">
+                        <div class="tertier-first columns large-4 small-12">
+                            {{ page.tertier_first }}   
+                        </div>
+                        <div class="tertier-second columns large-4 small-12">
+                            {{ page.tertier_second }}   
+                        </div>
+                        <div class="tertier-third columns large-4 small-12">
+                            {{ page.tertier_third }}   
+                        </div>
+                    </div>
+                </div>
+                    {% endif %}    
                 <div class="footer-wrapper">
                     {% if page.footer_first or page.footer_middle or page.footer_last %}
                     <footer>
