@@ -173,24 +173,31 @@
                 </div>
                 {% endif %}
 
-                <div class="row">
-                    {% if page.sidebar_first|render|striptags('<drupal-render-placeholder>')|trim|length > 0 %}
-<!--                    1-->
+                <div class="row main-wrapper">
+
+                    
+                    {% if page.sidebar_first|render|striptags('<drupal-render-placeholder>')|trim|length > 0 and page.sidebar_second|render|striptags('<drupal-render-placeholder>')|trim|length == 0 %}
+<!--                        v=1 h=0-->
                         {% set monoclick_sidebar_first_grid = 'large-3 large-pull-9' %}
                         {% set monoclick_main_grid = 'large-9 large-push-3' %}
-                    {% else %}
-<!--                    3-->
-                        {% set monoclick_main_grid = 'large-12' %}
                     {% endif %}
-                    
-                    {% if page.sidebar_second|render|striptags('<drupal-render-placeholder>')|trim|length > 0 %}
+                    {% if page.sidebar_first|render|striptags('<drupal-render-placeholder>')|trim|length > 0 and page.sidebar_second|render|striptags('<drupal-render-placeholder>')|trim|length > 0 %}
+<!--                        v=1 h=1-->
+                        {% set monoclick_sidebar_first_grid = 'large-3 large-pull-9' %}
+                    {% set monoclick_sidebar_second_grid = 'large-3' %}
+                        {% set monoclick_main_grid = 'large-6 large-push-3' %}
+                    {% endif %}
+                    {% if page.sidebar_first|render|striptags('<drupal-render-placeholder>')|trim|length == 0 and page.sidebar_second|render|striptags('<drupal-render-placeholder>')|trim|length > 0 %}
+<!--                        v=0 h=1-->
                         {% set monoclick_sidebar_second_grid = 'large-3' %}
                         {% set monoclick_main_grid = 'large-9' %}
-                    {% else %}
-                    
+                    {% endif %}
+                    {% if page.sidebar_first|render|striptags('<drupal-render-placeholder>')|trim|length == 0 and page.sidebar_second|render|striptags('<drupal-render-placeholder>')|trim|length == 0 %}
+<!--                        v=0 h=0-->
                         {% set monoclick_main_grid = 'large-12' %}
                     {% endif %}
-                   
+                    
+                                       
                     <main id="main" class="{{ monoclick_main_grid }} columns" role="main">
                         {% if page.highlighted %}
                         {% spaceless %}

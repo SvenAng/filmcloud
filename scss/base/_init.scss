@@ -32,7 +32,7 @@
 @media #{$small-only} {
 
 
-    header {
+    .header {
         position: fixed;
         top: 0;
         z-index: 99999;
@@ -48,7 +48,7 @@
 
 @media #{$medium-only} {
 
-        header {
+    .header {
         position: fixed;
         top: 0;
         z-index: 99999;
@@ -289,6 +289,9 @@ header {
 
 }
 //Content ======================================
+.main-wrapper{
+    padding-bottom: $column-gutter;
+}
 pre{
     overflow: inherit;
     white-space: pre-wrap;
@@ -311,9 +314,20 @@ pre{
         color: $charcoal;
     }
 }
-
+a.feed-icon::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f09e";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+//    width: 100%;
+}
 
 .standardvy{
+    header, a.feed-icon{
+        width: 100%;
+    }
 //    3 kolumner
     display: flex;
     flex-wrap: wrap;
@@ -466,6 +480,51 @@ pre{
         padding: $column-gutter;
     }
 }
+
+//Västerspalt meny\
+.sidebar{
+    nav{
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li{
+                a{
+                    color: $body-font-color;
+                    display: inline-block; 
+                    width: 90%;
+                }
+                a.is-active{
+                    color:$primary-color;
+                }
+                ul{
+                    margin-left: $column-gutter/4;
+                    li{
+                        a{
+                            font-size: 0.85rem;
+                        }
+                    }
+                }
+            }
+            li::before{
+                font-family: "Font Awesome 5 Free";
+                content: "\f105";
+                vertical-align: top;
+                font-weight: 900;
+                display: inline-block;
+                width: 5%;
+            }
+        }
+    }
+}
+
+//font-family: "Font Awesome 5 Free";
+//content: "\f09e";
+//display: inline-block;
+//padding-right: 3px;
+//vertical-align: middle;
+//font-weight: 900;
+
 .tertier-wrapper{
     background:  $silver;  
     padding: $column-gutter 0;
