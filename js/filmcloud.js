@@ -62,6 +62,10 @@
                 jQuery('.scroll-top').fadeOut(duration);
             }
         });
+        jQuery(".flyout-toggle").click(function(){
+//            console.log("flyout);
+            jQuery(this).parent().next().slideToggle();
+        });
         
         
     }

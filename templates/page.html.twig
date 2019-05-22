@@ -62,7 +62,7 @@
             
             <div class="header-wrapper-inner">
                 <div class="logo-wrapper">
-                    <div class="logo"><a href="/"><img src="/themes/filmcloud/images/logotype_outline_moln.svg"></a></div>
+                    <div class="logo"><a href="/"><img src="/themes/filmcloud/images/logotype_outline_moln.svg" shape-rendering="auto"></a></div>
                 </div>
                 <div class="top-wrapper">
                     <div class="top-wrapper-inner">
@@ -95,7 +95,7 @@
             </div>
 <!--            <aside>-->
                 
-                <div id="main-navigation" class="mobil_nav hide-for-large-up">
+                <div id="main-navigation" class="mobil_nav">
                     <div id="main-navigation-content">
                         {{ page.main_meny_mobil }}
                     </div>
@@ -108,6 +108,11 @@
         <div class="off-canvas-wrap" data-offcanvas>
             <section class="top-image" role="banner">
                 {{ page.big_image }}
+                {% if  node.field_stor_bild.value == 1 %}
+                {% if file_url(node.field_bild.entity.fileuri) != "/" %}
+                <img src="{{ file_url(node.field_bild.entity.fileuri | image_style('bild_def')) }}">
+                {% endif %}
+                {% endif %}
             </section>
             <div class="inner-wrap">
 
@@ -197,7 +202,7 @@
                         {% set monoclick_main_grid = 'large-12' %}
                     {% endif %}
                     
-                                       
+                                    
                     <main id="main" class="{{ monoclick_main_grid }} columns" role="main">
                         {% if page.highlighted %}
                         {% spaceless %}
@@ -211,7 +216,11 @@
                             {% if node.type.entity.label == null %}
                                 {{ page.content_title }}
                             {%endif %}
-                        
+                            {% if  node.field_stor_bild.value == 0 or node.field_stor_bild.value == null %}
+                            {% if file_url(node.field_bild.entity.fileuri) != "/" %}
+                            <img src="{{ file_url(node.field_bild.entity.fileuri | image_style('bild_def')) }}">
+                            {% endif %}
+                            {% endif %}
                             {{ page.content }}
                         </section>
                     </main>

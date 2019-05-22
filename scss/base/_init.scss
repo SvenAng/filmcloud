@@ -279,12 +279,9 @@ header {
         font-family: $font-family-serif;
         font-size: 3rem;
     }
-
-    .bild {
-        img {
-            width: 100%;
-            height: auto;
-        }
+    img {
+        width: 100%;
+        height: auto;
     }
 
 }
@@ -310,16 +307,21 @@ pre{
 }
 .group-middle{
     .date{
-        font-size: 0.85rem;
+        font-size: $small-font-size;
         color: $charcoal;
     }
 }
+a.feed-icon{
+    font-size: 0.8rem;
+    border-top: 1px solid $gainsboro;
+}
+
 a.feed-icon::before{
     font-family: "Font Awesome 5 Free";
     content: "\f09e";
     display: inline-block;
     padding-right: 3px;
-    vertical-align: middle;
+    vertical-align: top;
     font-weight: 900;
 //    width: 100%;
 }
@@ -327,20 +329,23 @@ a.feed-icon::before{
 .standardvy{
     header, a.feed-icon{
         width: 100%;
+       
+    } 
+    header{
+        border-bottom: 1px solid $gainsboro;
+        margin-bottom: $column-gutter;
     }
 //    3 kolumner
     display: flex;
     flex-wrap: wrap;
     .vyrad{
         padding: 0 $column-gutter/1.5 $column-gutter 0%;
-        h3{
-//            margin: 0.5rem 0 0.2rem 0;
-        }
+
         .image{
             margin: 0 0 0.6rem 0;
         }
         .date{
-            font-size: 0.85rem;
+            font-size: $small-font-size;
             color: $charcoal;
         }
     }
@@ -352,7 +357,6 @@ a.feed-icon::before{
     }
     @media #{$small-only} {
         .vyrad{
-            
             width: 100%;
         }
     }
@@ -364,7 +368,7 @@ a.feed-icon::before{
 .kalender{
    
     time, i{
-        font-size: 0.85rem;
+        font-size: $small-font-size;
         color: $charcoal;
     }
     i{
@@ -403,7 +407,7 @@ a.feed-icon::before{
     
     .item{
         time, i, .date{
-            font-size: 0.85rem;
+            font-size: $small-font-size;
             color: $charcoal;
         }
         i{
@@ -435,7 +439,7 @@ a.feed-icon::before{
                 i{
 //                    color: $nav-button-green;
                     padding-right: 0.7rem;
-                    font-size: 0.9rem;
+                    font-size: $small-font-size;
                 }
             }
             span.second{
@@ -448,7 +452,7 @@ a.feed-icon::before{
                 }
             }
         a{
-            font-size: 0.75rem;
+            font-size: $small-font-size;
         }
         
     }
@@ -477,7 +481,14 @@ a.feed-icon::before{
     }
     .meta-sida{
         background: $silver;
-        padding: $column-gutter;
+        padding: $column-gutter/2;
+        font-size: $small-font-size;
+        a, p{
+            font-size: $small-font-size;
+        }
+        p{
+//            margin-bottom: $
+        }
     }
 }
 
@@ -489,10 +500,13 @@ a.feed-icon::before{
             margin: 0;
             padding: 0;
             li{
+//                padding: $column-gutter/4 0;
                 a{
                     color: $body-font-color;
-                    display: inline-block; 
-                    width: 90%;
+//                    display: inline-block; 
+//                    width: 90%;
+                    line-height: $column-gutter;
+                    
                 }
                 a.is-active{
                     color:$primary-color;
@@ -505,14 +519,21 @@ a.feed-icon::before{
                         }
                     }
                 }
+                .flyout-toggle{
+                    display: none;
+                }
             }
             li::before{
                 font-family: "Font Awesome 5 Free";
                 content: "\f105";
-                vertical-align: top;
+                vertical-align: middle;
                 font-weight: 900;
                 display: inline-block;
-                width: 5%;
+                padding-right: 0.5rem;
+//                width: 5%;
+            }
+            .li-wrapper{
+                display: inline-block;
             }
         }
     }

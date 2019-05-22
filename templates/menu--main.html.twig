@@ -41,11 +41,13 @@
         {% set child_class = 'flyout' %}
       {% endif %}
         <li class="li1">
+            <div class="li-wrapper">
         {{ link(item.title, item.url) }}
         {% if item.below %}
           {% if not top_bar %}
-<!--            <a href="#" class="flyout-toggle"><span></span></a>-->
+            <a href="#" class="flyout-toggle"><span></span></a>
           {% endif %}
+            </div>    
           <ul class="child {{ child_class }}">
             {{ menus.menu_links(item.below, attributes, menu_level + 1, top_bar) }}
           </ul>
